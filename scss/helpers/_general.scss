@@ -1,0 +1,25 @@
+body{
+  position: relative;
+}
+
+*, html {
+  box-sizing: border-box;
+}
+
+.fixed{
+  position:fixed;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 0 2rem;
+  @include desktop{
+    .container {
+      max-width: $max-width-desktop;
+    }
+  }
+}
+
+
+

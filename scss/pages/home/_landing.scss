@@ -1,0 +1,38 @@
+.landing{
+  align-items: center;
+  background: $green;
+  display: flex;
+  justify-content: space-around;
+
+  &__inner{
+    @include center-inner-desktop;
+    background: white;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  &__content{
+    display: flex;
+    height: 80%;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-height: 600px;
+    max-width: $max-width;
+    width: 80%;
+  }
+  &__title{
+    font-size: 7.4rem;
+    font-weight: 700;
+    line-height: 6.5rem;
+    text-transform: uppercase;
+
+  }
+}
+
+@include mobile{
+  .landing{
+     &__inner{
+      @include center-inner-mobile;
+    }
+  }
+}

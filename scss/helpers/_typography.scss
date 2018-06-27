@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700');
+
+
+html {
+	font-size: 62.5%;
+}
+
+*, html, body {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	color: black;
+}
+
+h1, h2{
+	font-weight: 700;
+}
+
+h3, h4, h5{
+	font-weight: 700;
+}
+
+p, em, a, span, label, input, textarea{
+	font-size: 1.6rem;
+	line-height: 3rem;
+}
+p, em{
+	color: $gray;
+}
+a {
+	color: black;
+}
+
+
