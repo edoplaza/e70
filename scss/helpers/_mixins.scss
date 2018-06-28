@@ -47,3 +47,10 @@
   transform-origin:center;
   transition: transform $speed;
 }
+
+@mixin stroke($time) {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  fill: #ffffff;
+  animation: dash 1s linear forwards, fill $time ease-in forwards;
+}

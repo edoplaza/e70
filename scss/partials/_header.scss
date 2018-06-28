@@ -1,3 +1,83 @@
 .header{
+  display: flex;
+  left:0;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 101;
 
+  &__logo{
+    margin-left: 100px;
+    margin-top: 20px;
+    img{
+      width: 100px;
+    }
+  }
 }
+
+
+.pull {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 42px;
+  margin-right: 10px;
+  margin-top: 10px;
+  //display: none;
+  padding: 0 10px;
+  z-index: 300;
+  .pull-box {
+    display: inline-block;
+    height: 30px;
+    position: relative;
+    width: 30px;
+    .pull-inner {
+      background-color: white;
+      border-radius: 4px;
+      display: block;
+      height: 4px;
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      &::before {
+        background-color: white;
+        content: '';
+        display: block;
+        height: 4px;
+        position: absolute;
+        width: 30px;
+        top: -10px;
+        transition: transform 0.2s;
+      }
+
+      &::after {
+        background-color: white;
+        bottom: -10px;
+        content: '';
+        display: block;
+        height: 4px;
+        position: absolute;
+        transition: transform 0.2s;
+        width: 30px;
+      }
+    }
+  }
+
+  &.close {
+    .pull-box {
+      .pull-inner {
+        height: 0;
+        &:before {
+          transform: rotate(-45deg) translate(-7px,7px);
+          transition: transform 0.2s;
+        }
+        &:after {
+          transform: rotate(45deg) translate(-4px,-4px);
+          transition: transform 0.2s;
+        }
+      }
+    }
+  }
+}
+
