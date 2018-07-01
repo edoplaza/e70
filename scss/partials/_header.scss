@@ -10,12 +10,32 @@
   &__logo{
     margin-left: 100px;
     margin-top: 20px;
-    img{
-      width: 100px;
+    visibility: visible;
+    svg{
+      &.logo_green{
+        g{
+          .fill{
+            fill: $green;
+          }
+        }
+      }
+      &.logo_black{
+        g{
+          .fill{
+            fill: black;
+          }
+        }
+      }
+      &.logo_blue{
+        g{
+          .fill{
+            fill: $blue;
+          }
+        }
+      }
     }
   }
 }
-
 
 .pull {
   background: transparent;
@@ -69,10 +89,12 @@
       .pull-inner {
         height: 0;
         &:before {
-          transform: rotate(-45deg) translate(-7px,7px);
+           background-color: black;
+          transform: rotate(-45deg) translate(-8px,7px);
           transition: transform 0.2s;
         }
         &:after {
+          background-color: black;
           transform: rotate(45deg) translate(-4px,-4px);
           transition: transform 0.2s;
         }

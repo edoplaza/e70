@@ -43,34 +43,34 @@
         @include stroke(0.50s)
       }
       path.p2 {
-        @include stroke(0.53s)
+        @include stroke(0.55s)
       }
       path.p3 {
-        @include stroke(0.56s)
+        @include stroke(0.60s)
       }
       path.p4 {
-        @include stroke(0.59s)
-      }
-      path.p5 {
-        @include stroke(0.62s)
-      }
-      path.p6 {
         @include stroke(0.65s)
       }
+      path.p5 {
+        @include stroke(0.70s)
+      }
+      path.p6 {
+        @include stroke(0.75s)
+      }
       path.p7 {
-        @include stroke(0.68s)
+        @include stroke(0.80s)
       }
       path.p8 {
-        @include stroke(0.71s)
+        @include stroke(0.85s)
       }
       path.p9 {
-        @include stroke(0.74s)
+        @include stroke(0.90s)
       }
       path.p10 {
-        @include stroke(0.77s)
+        @include stroke(0.95s)
       }
       path.p11 {
-        @include stroke(0.80s)
+        @include stroke(1s)
       }
 
 

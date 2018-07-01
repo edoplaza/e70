@@ -1,6 +1,6 @@
 <nav class="nav">
-  <div class="nav__top">
-    <div class="nav__inner container">
+  <div class="nav-top">
+    <div class="nav-top__inner container">
       <ul>
         <li>
           <a href="#">Proyectos<span>Crème de la crème</span></a>
@@ -23,7 +23,16 @@
       </ul>
     </div>
   </div>
-  <div class="nav__footer">
-      Hello
+  <div class="nav-footer">
+    <img class="nav-footer__corner" src="/img/corner.svg" alt="">
+    <div class="nav-footer__inner container">
+      <img class="nav-footer__brand" src="/img/brand.svg" alt="">
+      <div class="nav-footer__social">
+        <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+        <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+        <a target="_blank" href="#"><i class="fab fa-vimeo"></i></a>
+      </div>
+    </div>
   </div>
 </nav>

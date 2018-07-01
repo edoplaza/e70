@@ -1,20 +1,23 @@
 .nav{
   background: $off-white;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
   position: fixed;
   width: 100vw;
   z-index: 100;
-  &__top{
-    display: flex;
-    height: 70%;
+  &.open{
+    display: block;
   }
+}
+
+.nav-top{
+  display: flex;
+  height: 70%;
   &__inner{
     align-items: center;
     display: flex;
-    width: 100vw;
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -54,17 +57,44 @@
 
     }
   }
-  &__footer{
-    background: $blue;
-    flex-basis: 300px;
-    min-height: 300px;
+}
 
-
-
-
+.nav-footer{
+  background: $blue;
+  display: flex;
+  align-items: center;
+  height: 30%;
+  position: relative;
+  &__corner{
+    left: 140px;
+    position: absolute;
+    top: 0;
+    width: 100px;
   }
-  &.open{
-    display: block;
+  &__inner{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 2rem;
   }
+  &__brand{
+    width: 275px;
+    margin-bottom: 4rem;
+  }
+  &__social{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    a{
+      i{
+        color: white;
+        font-size: 3rem;
+      }
+    }
+  }
+
+
+
 }
 

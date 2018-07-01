@@ -14,6 +14,7 @@ body{
   margin: 0 auto;
   max-width: $max-width;
   padding: 0 2rem;
+  width: 100%;
   @include desktop{
     .container {
       max-width: $max-width-desktop;
@@ -21,12 +22,12 @@ body{
   }
 }
 
-.visible{
-  visibility: visible;
+.open{
+  display: flex;
 }
 
 .hidden{
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 
