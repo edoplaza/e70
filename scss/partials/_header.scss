@@ -19,6 +19,13 @@
           }
         }
       }
+      &.logo_red{
+        g{
+          .fill{
+            fill: $red;
+          }
+        }
+      }
       &.logo_black{
         g{
           .fill{

@@ -1,0 +1,106 @@
+.what-we-do{
+  align-items: center;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  &__inner{
+    @include center-inner-desktop;
+    background: white;
+    position: relative;
+  }
+  &__content{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  &__title{
+    font-size: 7.4rem;
+    font-weight: 800;
+    line-height: 6.5rem;
+    margin-bottom: 2rem;
+    text-align: right;
+    text-transform: uppercase;
+  }
+
+  &__text{
+    color: black;
+    font-size: 2.2rem;
+    max-width: 400px;
+    text-align: right
+
+  }
+
+  &__sections{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+
+  }
+
+  &__section{
+    cursor: pointer;
+    padding: 20vh 2rem 0 2rem;
+    img{
+      margin: 0 0 1rem 0;
+      height: 5rem;
+    }
+    h3{
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+    }
+    p{
+      display: none;
+      font-size: 2.2rem;
+      line-height: 3rem;
+      color: white;
+      width: 500px;
+    }
+    &.expanded{
+      padding: 20vh 4rem 0 4rem;
+      width: calc( (100% / 3) * 2 );
+      transition: width .4s ease;
+      img{
+        display: none;
+      }
+      h3{
+        font-size: 4.4rem;
+      }
+      p{
+        display: block;
+      }
+
+    }
+  }
+
+  &__section--s1{
+    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    width: calc( 100% / 6 );
+    transition: width .4s ease;
+  }
+  &__section--s2{
+    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    width: calc( 100% / 6 );
+    transition: width .4s ease;
+  }
+  &__section--s3{
+    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    width: calc( 100% / 6 );
+    transition: width .4s ease;
+  }
+
+
+
+}
+

@@ -24,9 +24,9 @@
     </div>
   </div>
   <div class="nav-footer">
-    <img class="nav-footer__corner" src="/img/corner.svg" alt="">
+    <img class="nav-footer__corner" src="img/corner.svg" alt="">
     <div class="nav-footer__inner container">
-      <img class="nav-footer__brand" src="/img/brand.svg" alt="">
+      <img class="nav-footer__brand" src="img/brand.svg" alt="">
       <div class="nav-footer__social">
         <a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
         <a target="_blank" href="#"><i class="fab fa-instagram"></i></a>

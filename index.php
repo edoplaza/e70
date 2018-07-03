@@ -14,7 +14,7 @@
   <?php include 'header.php' ?>
   <?php include 'nav.php' ?>
 
-  <div class="home-section landing">
+  <div class="home-section landing S1">
     <div class="landing__inner">
       <div class="landing__content">
         <div class="landing__tagline">
@@ -55,6 +55,38 @@
           </svg>
 
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-section what-we-do S2">
+    <div class="what-we-do__inner">
+      <div class="what-we-do__content">
+        <div>
+          <h2 class="what-we-do__title">Qué<br>hacemos</h2>
+          <p class="what-we-do__text">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+        </div>
+      </div>
+      <div class="what-we-do__sections">
+        <div class="what-we-do__section what-we-do__section--s1">
+          <img src="img/election.svg" alt="Electorales">
+          <h3>Campañas <br>Electorales</h3>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradishmaize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</p>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+        </div>
+         <div class="what-we-do__section what-we-do__section--s2">
+          <img src="img/institucional.svg" alt="Institucionales">
+          <h3>Campañas <br>Institucionales</h3>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradishmaize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</p>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+        </div>
+         <div class="what-we-do__section what-we-do__section--s3">
+          <img src="img/conciencia.svg" alt="Conciencia">
+          <h3>Campañas <br>de Conciencia</h3>
+          <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradishmaize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea.</p>
+          <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
+        </div>
+
+
       </div>
     </div>
   </div>
