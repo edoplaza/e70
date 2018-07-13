@@ -15,9 +15,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
   }
-
   &__title{
     font-size: 7.4rem;
     font-weight: 800;
@@ -26,13 +24,11 @@
     text-align: right;
     text-transform: uppercase;
   }
-
   &__text{
     color: black;
     font-size: 2.2rem;
     max-width: 400px;
     text-align: right
-
   }
 
   &__sections{
@@ -43,10 +39,7 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
-
-
   }
-
   &__section{
     cursor: pointer;
     padding: 20vh 2rem 0 2rem;
@@ -80,22 +73,21 @@
       p{
         display: block;
       }
-
     }
   }
 
   &__section--s1{
-    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    background: url('../img/electorales.jpg') no-repeat center / cover;
     width: calc( 100% / 6 );
     transition: width .4s ease;
   }
   &__section--s2{
-    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    background: url('../img/institucionales.jpg') no-repeat center / cover;
     width: calc( 100% / 6 );
     transition: width .4s ease;
   }
   &__section--s3{
-    background: url('../img/wwd-1.jpg') no-repeat center / cover;
+    background: url('../img/conciencia.jpg') no-repeat center / cover;
     width: calc( 100% / 6 );
     transition: width .4s ease;
   }

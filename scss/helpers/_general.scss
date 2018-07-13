@@ -1,5 +1,7 @@
 body{
   position: relative;
+  overflow: hidden;
+
 }
 
 *, html {
@@ -7,19 +9,7 @@ body{
 }
 
 .fixed{
-  position:fixed;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: $max-width;
-  padding: 0 2rem;
-  width: 100%;
-  @include desktop{
-    .container {
-      max-width: $max-width-desktop;
-    }
-  }
+ position:fixed;
 }
 
 .open{
@@ -28,6 +18,22 @@ body{
 
 .hidden{
   visibility: hidden !important;
+}
+
+.pointer-events-none{
+  pointer-events: none;
+}
+
+.align-left{
+  text-align: left;
+}
+
+.align-right{
+  text-align: right;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 

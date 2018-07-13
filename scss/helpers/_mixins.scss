@@ -17,13 +17,11 @@
   }
 }
 
-
 @mixin mobile {
   @media (max-width: #{$mobile-width}) {
     @content;
   }
 }
-
 
 @mixin center{
   left:50%;
@@ -41,7 +39,6 @@
   width: calc( 100vw - (#{$border-size-mobile})*2 );
 }
 
-
 @mixin zoom($zoom, $speed){
   transform: scale($zoom);
   transform-origin:center;
@@ -54,3 +51,5 @@
   fill: #ffffff;
   animation: dash 1s linear forwards, fill $time ease-in forwards;
 }
+
+

@@ -4,18 +4,21 @@
 @import 'helpers/mixins.scss';
 @import 'helpers/typography.scss';
 @import 'helpers/general.scss';
-
+@import 'helpers/layout.scss';
 
 @import 'components/buttons.scss';
 @import 'components/social.scss';
 
-@import 'partials/header.scss';
+@import 'partials/logo.scss';
+@import 'partials/pull.scss';
 @import 'partials/nav.scss';
 @import 'partials/footer.scss';
 
 @import 'pages/home/home.scss';
 @import 'pages/home/landing.scss';
 @import 'pages/home/what-we-do.scss';
-
+@import 'pages/home/tagline';
+@import 'pages/home/campaigns';
+@import 'pages/home/stats';
 @import 'pages/single.scss';
 

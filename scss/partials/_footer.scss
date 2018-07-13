@@ -1,3 +1,47 @@
 .footer{
+  background: white;
+  text-align: center;
+  width: 100%;
+  &__social{
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto 2.4rem auto;
+    a{
+      display: inline-block;
+      i{
+        font-size: 3rem;
+      }
+    }
+  }
+  &__mail{
+    font-size: 3.6rem;
+    font-weight: 300;
+    display: block;
+    margin: 0 auto 7rem auto;
+  }
+  &__colors{
+    display: flex;
+  }
+
+  &__color{
+    width: 25%;
+    height: 30px;
+  }
+
+  &__color--blue{
+    background: $blue;
+  }
+  &__color--yellow{
+    background: $yellow;
+  }
+  &__color--green{
+    background: $green;
+  }
+  &__color--red{
+    background: $red;
+  }
+
+
 
 }

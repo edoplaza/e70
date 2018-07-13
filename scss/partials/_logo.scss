@@ -1,0 +1,55 @@
+.logo{
+  pointer-events: none;
+  position: fixed;
+  top: 2rem;
+  left: 10rem;
+  //visibility: visible;
+  z-index: 80;
+}
+
+
+.logo--green{
+  g{
+    .fill1{
+      fill: $green;
+    }
+    .fill2{
+      fill: white;
+    }
+  }
+}
+
+.logo--red{
+  g{
+    .fill1{
+      fill: $red;
+    }
+    .fill2{
+      fill: white;
+    }
+  }
+}
+
+.logo--blue{
+  g{
+    .fill1{
+      fill: $blue;
+    }
+    .fill2{
+      fill: white;
+    }
+  }
+}
+
+.logo--black{
+  g{
+    .fill1{
+      fill: white;
+    }
+    .fill2{
+      fill: black;
+    }
+  }
+}
+
+

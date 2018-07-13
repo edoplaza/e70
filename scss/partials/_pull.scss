@@ -1,45 +1,58 @@
 .pull {
+  cursor: pointer;
   background: transparent;
   border: none;
-  cursor: pointer;
   height: 42px;
-  margin-right: 10px;
-  margin-top: 10px;
-  //display: none;
   padding: 0 10px;
-  z-index: 300;
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 100;
   .pull-box {
     display: inline-block;
     height: 30px;
     position: relative;
     width: 30px;
     .pull-inner {
-      background-color: white;
+      background-color: black;
       border-radius: 4px;
       display: block;
       height: 4px;
       position: absolute;
       top: 50%;
       width: 30px;
+      transition: all 0.2s;
       &::before {
-        background-color: white;
+        background-color: black;
         content: '';
         display: block;
         height: 4px;
         position: absolute;
         width: 30px;
         top: -10px;
-        transition: transform 0.2s;
+        transition: all 0.2s;
       }
       &::after {
-        background-color: white;
+        background-color: black;
         bottom: -10px;
         content: '';
         display: block;
         height: 4px;
         position: absolute;
-        transition: transform 0.2s;
+        transition: all 0.2s;
         width: 30px;
+      }
+    }
+  }
+  &.pull-white{
+    .pull-box{
+      .pull-inner{
+        background-color: white;
+        transition: all 0.2s;
+        &:before, &:after {
+          background-color: white;
+         transition: all 0.2s;
+        }
       }
     }
   }
