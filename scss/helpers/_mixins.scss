@@ -52,4 +52,18 @@
   animation: dash 1s linear forwards, fill $time ease-in forwards;
 }
 
+@mixin colorLogo($fill1, $fill2) {
+  g{
+    .fill1{
+      fill: $fill1;
+      transition: all 0.3s ease;
+    }
+    .fill2{
+      fill: $fill2;
+      transition: all 0.3s ease;
+    }
+  }
+
+}
+
 

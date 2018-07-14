@@ -17,6 +17,19 @@
     height: 100%;
     position: relative;
   }
+
+  &__down{
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    line-height: 1;
+    i{
+      font-size: 4rem;
+      line-height: 1;
+    }
+  }
   &__title{
     font-size: 7.4rem;
     font-weight: 700;
@@ -36,20 +49,20 @@
     }
     &.l1{
       position: fixed;
-      bottom: 600px;
+      bottom: calc( 10vh + 400px );
     }
     &.l2{
       position: fixed;
-      bottom: 500px;
+      bottom: calc( 10vh + 300px );
       z-index: 200;
     }
     &.l3{
       position: fixed;
-      bottom: 400px;
+      bottom: calc( 10vh + 200px );
     }
     &.l4{
       position: fixed;
-      bottom: 300px;
+      bottom: calc( 10vh + 100px );
       z-index: 1;
     }
 

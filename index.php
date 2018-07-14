@@ -23,6 +23,7 @@
       <div class="home-section landing s1">
         <div class="landing__inner">
           <div class="landing__content">
+            <span class="landing__down">SCROLL DOWN <br><i class="fas fa-angle-down"></i></span>
             <div class="landing__svg l1">
               <?php include 'svg/la.php' ?>
             </div>
@@ -42,6 +43,7 @@
       <div class="home-section what-we-do s2">
         <div class="what-we-do__inner">
           <div class="what-we-do__content">
+            <span class="what-we-do__close"><i class="fas fa-angle-right"></i></span>
             <div>
               <h2 class="what-we-do__title">Qué<br>hacemos</h2>
               <p class="what-we-do__text">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
@@ -133,7 +135,7 @@
           </div>
         </div>
       </div>
-      <div class="home-section stats s5">
+      <div class="home-section-free stats s5">
         <div class="stats__inner">
           <img class="stats__logo" src="img/e70-blue.svg" alt="">
           <h2 class="stats__tagline">Amamos la creatividad y la política, <br>pero sobre todo ganar</h2>
@@ -184,6 +186,7 @@
   </div>
 </div>
 <script src="js/vendor/jquery-3.3.1.min.js"></script>
+<script src="js/vendor/easing.js"></script>
 <script src="js/main-min.js"></script>
 </body>
 </html>

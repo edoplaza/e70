@@ -3,53 +3,22 @@
   position: fixed;
   top: 2rem;
   left: 10rem;
-  //visibility: visible;
+  visibility: visible;
   z-index: 80;
 }
 
-
 .logo--green{
-  g{
-    .fill1{
-      fill: $green;
-    }
-    .fill2{
-      fill: white;
-    }
-  }
+  @include colorLogo($green, $white);
 }
 
 .logo--red{
-  g{
-    .fill1{
-      fill: $red;
-    }
-    .fill2{
-      fill: white;
-    }
-  }
+  @include colorLogo($red, $white);
 }
 
 .logo--blue{
-  g{
-    .fill1{
-      fill: $blue;
-    }
-    .fill2{
-      fill: white;
-    }
-  }
+  @include colorLogo($blue, $white);
 }
 
 .logo--black{
-  g{
-    .fill1{
-      fill: white;
-    }
-    .fill2{
-      fill: black;
-    }
-  }
+  @include colorLogo($white, $black);
 }
-
-

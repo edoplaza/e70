@@ -12,12 +12,20 @@ body{
  position:fixed;
 }
 
-.open{
-  display: flex;
-}
+// .open{
+//   display: flex;
+// }
 
 .hidden{
   visibility: hidden !important;
+}
+
+.visible{
+  opacity: 1 !important;
+  z-index: 100 !important;
+  transition: z-index 0s, opacity 0.5s !important;
+
+
 }
 
 .pointer-events-none{

@@ -16,6 +16,20 @@
     align-items: center;
     justify-content: center;
   }
+  &__close{
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: z-index .01s 1s, opacity 0.5s;
+    i{
+      cursor: pointer;
+      font-size: 5rem;
+    }
+
+  }
   &__title{
     font-size: 7.4rem;
     font-weight: 800;
@@ -62,7 +76,7 @@
     }
     &.expanded{
       padding: 20vh 4rem 0 4rem;
-      width: calc( (100% / 3) * 2 );
+      width: calc( ((100% / 3) * 2) - 80px );
       transition: width .4s ease;
       img{
         display: none;

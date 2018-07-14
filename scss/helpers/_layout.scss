@@ -13,7 +13,7 @@ body{
   height: 100vh;
   width: 100vw;
   opacity: 0;
-  background: linear-gradient(231deg, #8dd2c1, #2f9ac7, #b088e1, #cde170);
+  background: linear-gradient(231deg, $frame-blue, $frame-green, $frame-green-apple, $frame-red, $frame-red-dark);
   background-size: 800% 800%;
   animation: gradient 7s ease infinite;
 
