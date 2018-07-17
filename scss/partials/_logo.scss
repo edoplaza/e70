@@ -22,3 +22,12 @@
 .logo--black{
   @include colorLogo($white, $black);
 }
+
+@include desktop {
+  .logo{
+    left: 2rem;
+    top: -1rem;
+    width: 80px;
+
+  }
+}

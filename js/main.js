@@ -3,6 +3,7 @@
   $(document).ready( function($){
 
 	// Selectors
+  const desktop = 1200;
 	const frame = $('.frame');
 	const pull = $('.pull');
 	const logo = $('.logo');
@@ -27,6 +28,10 @@
  	let landingHeight = landing.height() + landingImage.height() + 160;
  	landing.css('height', landingHeight);
 
+  if ($(window).width() < desktop ) {
+    landing.css('height', '100%');
+  }
+
 
   // Outer Frame functions
 	let addColorFrame = () => {
@@ -42,12 +47,17 @@
 		pull.removeClass('pull-white');
 	}
 	pull.on('mouseenter', document, () => {
-		addColorFrame();
-		pullColorWhite();
+    if ($(window).width() > desktop) {
+      addColorFrame();
+      pullColorWhite();
+    }
+
 	})
 	pull.on('mouseleave', document, () => {
-		removeColorFrame();
-		pullColorBlack();
+    if ($(window).width() > desktop) {
+		  removeColorFrame();
+		  pullColorBlack();
+    }
 	});
 
 	frame.on( 'mousedown', function( event ) {
@@ -115,7 +125,11 @@
 
 
     s1Pos < -10 ? down.hide() : down.show();
-  	s2Pos <= $(window).height() ? $('.landing__svg').addClass('absolute') : $('.landing__svg').removeClass('absolute');
+
+    if( $(window).width() > desktop ) {
+      s2Pos <= $(window).height() ? $('.landing__svg').addClass('absolute') : $('.landing__svg').removeClass('absolute');
+    }
+
 
   	// Change Logo colors
   	if(landingImgPos >= 0 ) {
@@ -142,37 +156,40 @@
   		addLogoColor('black');
   	}
 
-    // Magnetic Scroll
-    const speed = 500;
-    const range = $(window).height()/5;
-    const d1 = s1.offset().top - s2.offset().top - 10;
-    const d2 = s1.offset().top - s3.offset().top - 10;
-    const d3 = s1.offset().top - s4.offset().top - 10;
+    // // Magnetic Scroll
 
-    //S2
-    if (( s2Pos < range && s2Pos > -range ) && stop2 == 0 ) {
-      content.animate({ scrollTop: -d1 }, speed, "easeOutQuad");
-      stop2 = 1;
-    }
+    if ($(window).width() > desktop ){
+      const speed = 500;
+      const range = $(window).height()/5;
+      const d1 = s1.offset().top - s2.offset().top - 10;
+      const d2 = s1.offset().top - s3.offset().top - 10;
+      const d3 = s1.offset().top - s4.offset().top - 10;
 
-    if ((s2Pos > range || s2Pos < -range) && stop2 == 1) stop2 = 0;
+      //S2
+      if (( s2Pos < range && s2Pos > -range ) && stop2 == 0 ) {
+        content.animate({ scrollTop: -d1 }, speed, "easeOutQuad");
+        stop2 = 1;
+      }
 
-
-    //S3
-    if (( s3Pos < range && s3Pos > -range ) && stop3 == 0 ) {
-      content.animate({ scrollTop: -d2 }, speed, "easeOutQuad");
-      stop3 = 1;
-    }
-
-    if ((s3Pos > range || s3Pos < -range) && stop3 == 1) stop3 = 0;
+      if ((s2Pos > range || s2Pos < -range) && stop2 == 1) stop2 = 0;
 
 
-    //S4
-    if (( s4Pos < range && s4Pos > -range ) && stop4 == 0 ) {
-      content.animate({ scrollTop: -d3 }, speed, "easeOutQuad");
-      stop4 = 1;
-    }
-    if ((s4Pos > range || s4Pos < -range) && stop4 == 1) stop4 = 0;
+      //S3
+      if (( s3Pos < range && s3Pos > -range ) && stop3 == 0 ) {
+        content.animate({ scrollTop: -d2 }, speed, "easeOutQuad");
+        stop3 = 1;
+      }
+
+      if ((s3Pos > range || s3Pos < -range) && stop3 == 1) stop3 = 0;
+
+
+      //S4
+      if (( s4Pos < range && s4Pos > -range ) && stop4 == 0 ) {
+        content.animate({ scrollTop: -d3 }, speed, "easeOutQuad");
+        stop4 = 1;
+      }
+      if ((s4Pos > range || s4Pos < -range) && stop4 == 1) stop4 = 0;
+     }
 
 
   });

@@ -5,8 +5,8 @@
   height: 42px;
   padding: 0 10px;
   position: fixed;
-  right: 1.5rem;
-  top: 1.5rem;
+  right: 1.2rem;
+  top: 1.7rem;
   z-index: 100;
   .pull-box {
     display: inline-block;
@@ -73,5 +73,14 @@
       }
     }
   }
+}
+
+@include desktop{
+  .pull {
+    right: 0;
+    top: 1rem;
+
+  }
+
 }
 

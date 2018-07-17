@@ -17,17 +17,17 @@
     justify-content: center;
   }
   &__close{
+    cursor: pointer;
     left: 10px;
     position: absolute;
     top: 50%;
-    transform: translate(0, -50%);
+    transform: translate(0, -50%) rotate(270deg);
     z-index: -1;
     opacity: 0;
     transition: z-index .01s 1s, opacity 0.5s;
-    i{
-      cursor: pointer;
-      font-size: 5rem;
-    }
+    width: 40px;
+    fill: black;
+
 
   }
   &__title{
@@ -105,8 +105,99 @@
     width: calc( 100% / 6 );
     transition: width .4s ease;
   }
+}
+
+@include desktop{
+  .what-we-do{
+    height: auto !important;
+    &__inner{
+      @include center-inner-desktop;
+
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    &__content{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    &__close{
+      display: none;
+    }
+    &__title{
+      font-size: 7.4rem;
+      font-weight: 800;
+      line-height: 6.5rem;
+      margin-bottom: 2rem;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    &__text{
+      color: black;
+      font-size: 2.2rem;
+      max-width: 400px;
+      text-align: right
+    }
+
+    &__sections{
+      position: relative;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+    &__section{
+
+      padding: 3rem 2rem 1rem 2rem;
+      width: 100% !important;
+      img{
+        display: none;
+      }
+      h3{
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+      }
+      p{
+        font-size: 1.6rem;
+        line-height: 3rem;
+        width: 100%;
+        max-width: 700px;
+      }
+      &.expanded{
+        padding: 3rem 2rem;
+        width: 100%;
+        h3{
+          font-size: 4.4rem;
+        }
+        p{
+          display: block;
+        }
+      }
+    }
+
+    &__section--s1{
+      background: url('../img/electorales.jpg') no-repeat center / cover;
 
 
+    }
+    &__section--s2{
+      background: url('../img/institucionales.jpg') no-repeat center / cover;
+
+    }
+    &__section--s3{
+      background: url('../img/conciencia.jpg') no-repeat center / cover;
+
+    }
+  }
 
 }
 

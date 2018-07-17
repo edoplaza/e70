@@ -23,17 +23,19 @@ body{
   background: white;
   position: fixed;
   overflow: hidden;
-  @include center-inner-desktop;
+  @include center-inner-hd;
 }
 
 
 .content{
   background: white;
-  height: 100vh;
+  height: 100%;
   width: calc(100% + 20px);
   position: relative;
   top: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 
@@ -52,17 +54,20 @@ body{
   width: 100%;
 }
 
-@inclide desktop{
+@include desktop{
+  .frame{
+    background: white;
+    background-size: 100%;
+    animation: none;
+  }
   .container{
      max-width: $max-width-desktop;
   }
-}
-
-@include mobile {
   .wrapper{
-    @include center-inner-mobile
+    @include center-inner-desktop
   }
 }
+
 
 @keyframes gradient {
     0%{background-position:0% 50%}

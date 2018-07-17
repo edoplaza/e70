@@ -29,14 +29,14 @@
   transform: translate(-50%,-50%);
 }
 
+@mixin center-inner-hd{
+  height: calc( 100vh - (#{$border-size-hd})*2 );
+  width: calc( 100vw - (#{$border-size-hd})*2 );
+}
+
 @mixin center-inner-desktop{
   height: calc( 100vh - (#{$border-size-desktop})*2 );
   width: calc( 100vw - (#{$border-size-desktop})*2 );
-}
-
-@mixin center-inner-mobile{
-  height: calc( 100vh - (#{$border-size-mobile})*2 );
-  width: calc( 100vw - (#{$border-size-mobile})*2 );
 }
 
 @mixin zoom($zoom, $speed){
@@ -64,6 +64,11 @@
     }
   }
 
+}
+
+@mixin jump($time){
+
+  animation: jump $time infinite;
 }
 
 

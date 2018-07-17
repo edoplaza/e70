@@ -23,7 +23,7 @@
       <div class="home-section landing s1">
         <div class="landing__inner">
           <div class="landing__content">
-            <span class="landing__down">SCROLL DOWN <br><i class="fas fa-angle-down"></i></span>
+            <span class="landing__down">Iniciar<br><img src="img/arrow.svg" alt="Scroll Down"></span>
             <div class="landing__svg l1">
               <?php include 'svg/la.php' ?>
             </div>
@@ -43,7 +43,7 @@
       <div class="home-section what-we-do s2">
         <div class="what-we-do__inner">
           <div class="what-we-do__content">
-            <span class="what-we-do__close"><i class="fas fa-angle-right"></i></span>
+            <img class="what-we-do__close" src="img/arrow.svg"></img>
             <div>
               <h2 class="what-we-do__title">Qué<br>hacemos</h2>
               <p class="what-we-do__text">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>

@@ -1,19 +1,24 @@
 .home-section{
   background: white;
-  @include center-inner-desktop;
+  @include center-inner-hd;
   margin-bottom: 64px;
 }
 
 .home-section-free{
   background: white;
-  width: calc( 100vw - (#{$border-size-desktop})*2 );
+  width: calc( 100vw - (#{$border-size-hd})*2 );
   height: auto;
   margin-bottom: 64px;
 }
 
-@include mobile{
+@include desktop{
   .home-section{
-    @include center-inner-mobile;
+    @include center-inner-desktop;
+    margin-bottom: 44px;
+  }
+  .home-section-free{
+    width: calc( 100vw - (#{$border-size-desktop})*2 );
+    margin-bottom: 44px;
   }
 }
 

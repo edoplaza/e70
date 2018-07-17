@@ -15,3 +15,17 @@
   }
 }
 
+
+@include desktop{
+  .tagline{
+    &__text{
+      color: white;
+      font-size: 4rem;
+      line-height: 5rem;
+      margin-bottom: 4rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
