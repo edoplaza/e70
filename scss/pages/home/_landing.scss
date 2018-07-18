@@ -60,20 +60,20 @@
     }
     &.l1{
       position: fixed;
-      bottom: calc( 12vh + 400px );
+      top: calc( (80vh - 400px );
     }
     &.l2{
       position: fixed;
-      bottom: calc( 12vh + 300px );
+      top: calc( 80vh - 300px );
       z-index: 200;
     }
     &.l3{
       position: fixed;
-      bottom: calc( 12vh + 200px );
+      top: calc( 80vh - 200px );
     }
     &.l4{
       position: fixed;
-      bottom: calc( 12vh + 100px );
+      top: calc( 80vh - 100px );
       z-index: 1;
     }
 
@@ -151,7 +151,7 @@
 
 @include desktop {
   .landing{
-    overflow: hidden;
+    overflow-y: visible;
     height: 100%;
     &__inner{
       @include center-inner-desktop;
@@ -178,26 +178,27 @@
         width: 360px !important;
       }
       &.l1{
-        bottom: calc( 10vh + 320px );
+        top: calc( 70vh - 320px );
       }
       &.l2{
-        bottom: calc( 10vh + 240px );
+        top: calc( 70vh - 240px );
       }
       &.l3{
-        bottom: calc( 10vh + 160px );
+        top: calc( 70vh - 160px );
       }
       &.l4{
-        bottom: calc( 10vh + 80px );
+        top: calc( 70vh - 80px );
       }
     }
 
     &__image{
-      display: none;
-      position: absolute;
+      //display: none;
+      position: relative;
       right: 0;
-      width: 70%;
+      width: 100%;
       height: auto;
       top: 0;
+      margin-top: 100vh;
       z-index: 100;
     }
   }
@@ -212,16 +213,16 @@
         transform: scale(1.7);
       }
       &.l1{
-        bottom: calc( 10vh + 240px );
+        top: calc( 70vh - 240px );
       }
       &.l2{
-        bottom: calc( 10vh + 180px );
+        top: calc( 70vh - 180px );
       }
       &.l3{
-        bottom: calc( 10vh + 120px );
+        top: calc( 70vh - 120px );
       }
       &.l4{
-        bottom: calc( 10vh + 60px );
+        top: calc( 70vh - 60px );
       }
     }
   }
@@ -235,16 +236,16 @@
         transform: scale(1);
       }
       &.l1{
-        bottom: calc( 10vh + 160px );
+        top: calc( 60vh - 160px );
       }
       &.l2{
-        bottom: calc( 10vh + 120px );
+        top: calc( 60vh - 120px );
       }
       &.l3{
-        bottom: calc( 10vh + 80px );
+        top: calc( 60vh - 80px );
       }
       &.l4{
-        bottom: calc( 10vh + 40px );
+        top: calc( 60vh - 40px );
       }
     }
   }

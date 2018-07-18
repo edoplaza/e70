@@ -29,7 +29,7 @@
  	landing.css('height', landingHeight);
 
   if ($(window).width() < desktop ) {
-    landing.css('height', '100%');
+    landing.css('height', 'auto');
   }
 
 

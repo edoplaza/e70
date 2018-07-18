@@ -106,7 +106,6 @@
     transition: width .4s ease;
   }
 }
-
 @include desktop{
   .what-we-do{
     height: auto !important;
@@ -200,4 +199,14 @@
   }
 
 }
+
+@include mobile{
+  .what-we-do{
+    &__title{
+      font-size: 5.8rem;
+      line-height: 6.2rem;
+    }
+  }
+}
+
 
