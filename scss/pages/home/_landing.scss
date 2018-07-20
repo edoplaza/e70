@@ -48,15 +48,23 @@
     text-transform: uppercase;
   }
   &__svg{
-    left: 30vw;
+    left: 25vw;
     position: fixed;
     pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    &.fadeOut{
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+
     &.absolute{
       left: calc( 30vw - 64px );
       position: absolute !important;
     }
     svg{
-      transform: scale(2.5);
+      transform: scale(2.3);
     }
     &.l1{
       position: fixed;
@@ -231,9 +239,9 @@
 @include mobile{
   .landing{
      &__svg{
-      left: 2vw;
+      left: -10px;
       svg{
-        transform: scale(1);
+        transform: scale(0.9);
       }
       &.l1{
         top: calc( 60vh - 160px );

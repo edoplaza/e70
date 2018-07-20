@@ -203,8 +203,33 @@
 @include mobile{
   .what-we-do{
     &__title{
-      font-size: 5.8rem;
-      line-height: 6.2rem;
+      font-size: 5rem;
+      line-height: 5.4rem;
+    }
+    &__text{
+      font-size: 2rem;
+    }
+
+    &__section{
+      h3{
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    &__section{
+      &.expanded{
+        width: calc( ((100% / 3) * 2) - 80px );
+        transition: width .4s ease;
+        img{
+          display: none;
+        }
+        h3{
+          font-size: 3rem;
+        }
+        p{
+          display: block;
+        }
+      }
     }
   }
 }

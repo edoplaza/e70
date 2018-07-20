@@ -23,11 +23,16 @@
   @include colorLogo($white, $black);
 }
 
+.logo--transparent{
+  @include colorLogo($transparent, $transparent);
+}
+
+
 @include desktop {
   .logo{
-    left: 2rem;
-    top: -1rem;
-    width: 80px;
+    left: 4rem;
+    top: -10px;
+    width: 60px;
 
   }
 }

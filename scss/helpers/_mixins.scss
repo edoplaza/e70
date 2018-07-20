@@ -35,7 +35,7 @@
 }
 
 @mixin center-inner-desktop{
-  height: calc( 100vh - (#{$border-size-desktop})*2 );
+  height: calc( 100vh - ( #{$border-size-desktop}) * 4 );
   width: calc( 100vw - (#{$border-size-desktop})*2 );
 }
 
@@ -56,11 +56,11 @@
   g{
     .fill1{
       fill: $fill1;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
     .fill2{
       fill: $fill2;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
     }
   }
 

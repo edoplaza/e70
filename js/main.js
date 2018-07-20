@@ -86,7 +86,7 @@
 
 	// Main Logo Functions
 	let removeLogoColors = () => {
-		 logo.removeClass('logo--green logo--red logo--black logo--blue');
+		 logo.removeClass('logo--green logo--red logo--black logo--blue logo--transparent');
 	}
 
 	let addLogoColor = color => {
@@ -127,7 +127,7 @@
     s1Pos < -10 ? down.hide() : down.show();
 
     if( $(window).width() > desktop ) {
-      s2Pos <= $(window).height() ? $('.landing__svg').addClass('absolute') : $('.landing__svg').removeClass('absolute');
+      s2Pos <= $(window).height() ? $('.landing__svg').addClass('fadeOut') : $('.landing__svg').removeClass('fadeOut');
     }
 
 
