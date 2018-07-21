@@ -64,9 +64,18 @@ body{
      max-width: $max-width-desktop;
   }
   .wrapper{
-    @include center-inner-desktop
+    @include center-inner-desktop;
+     margin-top: 14px;
+  }
+  @-moz-document url-prefix() {
+    @include desktop{
+      .wrapper{
+        margin-top: 27px;
+      }
+    }
   }
 }
+
 
 
 @keyframes gradient {

@@ -24,17 +24,19 @@
         <div class="landing__inner">
           <div class="landing__content">
             <span class="landing__down">Iniciar<br><img src="img/arrow.svg" alt="Scroll Down"></span>
-            <div class="landing__svg l1">
-              <?php include 'svg/la.php' ?>
-            </div>
-            <div class="landing__svg l2">
-              <?php include 'svg/creatividad.php' ?>
-            </div>
-            <div class="landing__svg l3">
-              <?php include 'svg/gana.php' ?>
-            </div>
-            <div class="landing__svg l4">
-              <?php include 'svg/elecciones.php' ?>
+            <div class="svgs">
+              <div class="landing__svg l1">
+                <?php include 'svg/la.php' ?>
+              </div>
+              <div class="landing__svg l2">
+                <?php include 'svg/creatividad.php' ?>
+              </div>
+              <div class="landing__svg l3">
+                <?php include 'svg/gana.php' ?>
+              </div>
+              <div class="landing__svg l4">
+                <?php include 'svg/elecciones.php' ?>
+              </div>
             </div>
             <img class="landing__image" src="img/e70.jpg" alt="">
           </div>
@@ -77,7 +79,7 @@
           <h2 class="tagline__text">Tus votos</h2>
         </div>
       </div>
-      <div class="home-section-free campaigns s4">
+      <div class="home-section campaigns s4">
         <div class="campaigns__inner">
           <div class="campaign" style="background: #ff0047">
             <div class="campaign__info">
@@ -97,42 +99,7 @@
             </div>
             <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
           </div>
-          <div class="campaign" style="background: #00a4ae">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
-              </div>
-            </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
-          </div>
-          <div class="campaign" style="background: #009de1">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
-              </div>
-            </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
-          </div>
-          <div class="campaign" style="background: #ff0047">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
-              </div>
-            </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
-          </div>
-          <div class="campaign" style="background: #f8a12f">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
-              </div>
-            </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
-          </div>
+
         </div>
       </div>
       <div class="home-section stats s5">
@@ -187,6 +154,7 @@
 </div>
 <script src="js/vendor/jquery-3.3.1.min.js"></script>
 <script src="js/vendor/easing.js"></script>
-<script src="js/main-min.js"></script>
+<!--<script src="js/main-min.js"></script>-->
+<script src="js/vanilla-min.js"></script>
 </body>
 </html>

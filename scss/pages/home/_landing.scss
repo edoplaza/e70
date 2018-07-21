@@ -238,7 +238,12 @@
 
 @include mobile{
   .landing{
-     &__svg{
+    &__down{
+        display: none;
+        opcaity: 0;
+        visibility: hidden;
+    }
+    &__svg{
       left: -10px;
       svg{
         transform: scale(0.9);
@@ -256,6 +261,15 @@
         top: calc( 60vh - 40px );
       }
     }
+  }
+}
+
+.svgs{
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  &.fadeOut{
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 }
 

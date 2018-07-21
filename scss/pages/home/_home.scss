@@ -22,4 +22,15 @@
   }
 }
 
+@include mobile{
+
+  .home-section{
+    margin-bottom: 30px;
+  }
+  .home-section-free{
+    margin-bottom: 30px;
+  }
+
+}
+
 

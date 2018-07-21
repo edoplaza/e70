@@ -42,6 +42,21 @@
     background: $red;
   }
 
+}
 
-
+@include mobile{
+  .footer{
+    &__social{
+    max-width: 250px;
+    a{
+      display: inline-block;
+      i{
+        font-size: 3rem;
+      }
+    }
+  }
+    &__mail{
+      font-size: 3rem;
+    }
+  }
 }

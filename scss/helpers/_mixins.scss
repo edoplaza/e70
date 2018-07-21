@@ -35,8 +35,9 @@
 }
 
 @mixin center-inner-desktop{
-  height: calc( 100vh - ( #{$border-size-desktop}) * 4 );
+  height: calc( 100vh - ( #{$border-size-desktop}) * 3 );
   width: calc( 100vw - (#{$border-size-desktop})*2 );
+
 }
 
 @mixin zoom($zoom, $speed){
