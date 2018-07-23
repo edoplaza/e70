@@ -1,21 +1,21 @@
 $(document).ready( function($){
 
 	// Selectors
-  const desktop = 1200;
+  const desktop = 1000;
 	const frame = $('.frame');
 	const pull = $('.pull');
 	const logo = $('.logo');
 	const nav = $('.nav');
-	const headerLogo = $('.header__logo');
 	const content = $('.content');
  	const landing = $('.landing');
-  const landingInner = $('.landing__inner');
+  const svgs = $('.svgs');
  	const landingImage = $('.landing__image');
  	const s1 = $('.s1');
  	const s2 = $('.s2');
  	const s3 = $('.s3');
  	const s4 = $('.s4');
  	const s5 = $('.s5');
+  const wwd = $('.what-we-do__section');
   const down = $('.landing__down');
   const close = $('.what-we-do__close');
 
@@ -24,9 +24,17 @@ $(document).ready( function($){
  	let landingHeight = landing.height() + landingImage.height() + 160;
  	landing.css('height', landingHeight);
 
+
   if ($(window).width() < desktop ) {
     landing.css('height', 'auto');
   }
+
+  $(window).resize(function(){
+    // if ($(window).width() >= desktop ) {
+    //   setTimeout( function(){location.reload(); }, 100 );
+    // }
+  })
+
 
 
   // Outer Frame functions
@@ -64,7 +72,7 @@ $(document).ready( function($){
 				pull.removeClass('pointer-events-none');
 				pull.hasClass('close') ?  pull.removeClass('close') : pull.addClass('close');
 				nav.hasClass('open') ? nav.removeClass('open') : nav.addClass('open');
-				headerLogo.hasClass('hidden') ? headerLogo.removeClass('hidden') : headerLogo.addClass('hidden');
+				logo.hasClass('hidden') ? logo.removeClass('hidden') : logo.addClass('hidden');
 			}
 		}
 	});
@@ -74,7 +82,7 @@ $(document).ready( function($){
   pull.on('click', document, function(){
     pull.hasClass('close') ?  pull.removeClass('close') : pull.addClass('close');
     nav.hasClass('open') ? nav.removeClass('open') : nav.addClass('open');
-    headerLogo.hasClass('hidden') ? headerLogo.removeClass('hidden') : headerLogo.addClass('hidden');
+    logo.hasClass('hidden') ? logo.removeClass('hidden') : logo.addClass('hidden');
   });
 
 
@@ -83,167 +91,98 @@ $(document).ready( function($){
 		 logo.removeClass('logo--green logo--red logo--black logo--blue logo--transparent');
 	}
 	let addLogoColor = color => {
-		removeLogoColors();
-		 logo.addClass('logo--'+ color);
+
+    setTimeout( function(){
+      removeLogoColors();
+      logo.addClass('logo--'+ color);
+
+    }, 500 )
+
 	}
 
 
   // Content Scroll Listeners & Effects
 
 
-  const speed = 1000;
-  const d0 = s1.offset().top;
-  const d1 = s1.offset().top - landingImage.offset().top;
-  const d2 = s1.offset().top - landingImage.offset().top - (landingImage.height() - $(window).outerHeight() );
-  const d3 = s1.offset().top - s2.offset().top;
-  const d4 = s1.offset().top - s3.offset().top;
-  const d5 = s1.offset().top - s4.offset().top;
-  const d6 = s1.offset().top - s5.offset().top;
-  const flags = [d0, d1, d2, d3, d4, d5, d6];
+  const speed = 700;
+  let p0 = s1.position().top;
+  let p1 = landingImage.position().top;
+  let p2 = landingImage.position().top + (landingImage.height() - $(window).outerHeight() );
+  let p3 = s2.position().top;
+  let p4 = s3.position().top;
+  let p5 = s4.position().top;
+  let p6 = s5.position().top;
 
-  let old = 0;
-  let current = 0;
+
+
+  const flags = [p0, p1, p2, p3, p4, p5, p6];
+
   let flag = 0;
   let counter = 0;
-  let direction = 'up';
 
+  let wrapper = document.getElementById("wrapper");
 
-  content.on('wheel', function(e){
+  if (wrapper.addEventListener) {
+    wrapper.addEventListener("mousewheel", MouseWheelHandler, false);
+    wrapper.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+  }
+  else wrapper.attachEvent("onmousewheel", MouseWheelHandler);
 
-    let s1Pos = s1.position().top;
-    let landingImgPos = s1Pos + $(window).outerHeight() - 5;
-  	let s2Pos = s2.position().top;
-  	let s3Pos = s3.position().top;
-  	let s4Pos = s4.position().top;
-  	let s5Pos = s5.position().top;
-
-    s1Pos < -10 ? down.hide() : down.show();
-
-    s2Pos <= $(window).height() ? $('.landing__svg').addClass('fadeOut') : $('.landing__svg').removeClass('fadeOut');
-
-    // Change Logo colors
-        if(landingImgPos >= 0 ) {
-          addLogoColor('green');
-        }
-
-        if(landingImgPos < 0 ) {
-          addLogoColor('blue');
-        }
-
-        if(s2Pos <= 0 ) {
-          addLogoColor('black');
-        }
-
-        if(s3Pos <= 0 ) {
-          addLogoColor('green');
-        }
-
-        if(s4Pos <= 0 ) {
-          addLogoColor('red');
-        }
-
-        if(s5Pos <= 75 ) {
-          addLogoColor('black');
-        }
-
-
-
-    //Magnetic Scroll
+  function MouseWheelHandler(e) {
+    var e = window.event || e;
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 
     if ($(window).width() > desktop ){
-
-      //Detect if going up or down
-      old = current;
-      current = s1Pos;
-
-      if (old > current) {
-        direction = 'up'
-      }
-      else if (old < current ) {
-        direction = 'down';
-      }
-
-      if( direction == 'up') {
+      if( delta == -1) {
         if ( flag == 0 ) {
           flag = 1;
           counter += 1;
-          content.animate({ scrollTop: -(flags[counter]) }, speed, "easeOutQuart", function(){
-            setTimeout( () => flag = 0 , 300);
-            console.log(counter);
+          if(counter > 6) counter = 6;
+          content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
+            setTimeout( () => flag = 0 , 500);
           });
         }
-      }
-      else if ( direction == 'down') {
+      } else {
         if ( flag == 0 ) {
           flag = 1;
           counter -= 1;
-          content.animate({ scrollTop: -(flags[counter]) }, speed, "easeOutQuart", function(){
-            setTimeout( () => flag = 0 , 300);
+          if (counter < 0) counter = 0;
+          content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
+            setTimeout( () => flag = 0 , 500);
           });
         }
       }
      }
 
-
-  });
-
-
+    counter >= 1 ? down.hide() : down.show();
+    counter >= 3 ? svgs.addClass('fadeOut') : svgs.removeClass('fadeOut');
+    counter == 0 && addLogoColor('green');
+    counter == 1 && addLogoColor('blue');
+    counter == 3 && addLogoColor('black');
+    counter == 4 && addLogoColor('green');
+    counter == 5 && addLogoColor('red');
+    counter == 6 && addLogoColor('black');
+  }
 
 
 	// Expand What We Do Sections
 
-	let wwd1 = $('.what-we-do__section--s1');
-	let wwd2 = $('.what-we-do__section--s2');
-	let wwd3 = $('.what-we-do__section--s3');
-
-	let removeExpanded = () => {
-	  wwd1.removeClass('expanded');
-	  wwd2.removeClass('expanded');
-	  wwd3.removeClass('expanded');
-	}
-
-	wwd1.on('click', document, function(){
-	  if ( wwd1.hasClass('expanded' )){
-	    wwd1.removeClass('expanded');
+	wwd.on('click', document, function(){
+	  if ( $(this).hasClass('expanded' )){
+	    $(this).removeClass('expanded');
       close.removeClass('visible');
 	  } else {
-	    removeExpanded();
-	    wwd1.addClass('expanded');
-      close.addClass('visible');
-	  }
-
-	});
-
-	wwd2.on('click', document, function(){
-	   if ( wwd2.hasClass('expanded' )){
-	    wwd2.removeClass('expanded');
-      close.removeClass('visible');
-	  } else {
-	    removeExpanded();
-	    wwd2.addClass('expanded');
+	    wwd.removeClass('expanded');
+	    $(this).addClass('expanded');
       close.addClass('visible');
 	  }
 	});
 
-	wwd3.on('click', document, function(){
-
-	   if ( wwd3.hasClass('expanded' )){
-	    wwd3.removeClass('expanded');
-      close.removeClass('visible');
-	  } else {
-	    removeExpanded();
-	    wwd3.addClass('expanded');
-      close.addClass('visible');
-	  }
-	});
 
   close.on('click', document, ()=> {
-    removeExpanded();
+    wwd.removeClass('expanded');
     close.removeClass('visible');
-
   });
 
+
 });
-
-
-

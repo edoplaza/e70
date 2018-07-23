@@ -18,11 +18,13 @@
       <span class="pull-inner"></span>
     </span>
   </button>
-  <div class="wrapper">
+  <div id="wrapper" class="wrapper">
     <div class="content">
+
       <div class="home-section landing s1">
         <div class="landing__inner">
           <div class="landing__content">
+
             <span class="landing__down">Iniciar<br><img src="img/arrow.svg" alt="Scroll Down"></span>
             <div class="svgs">
               <div class="landing__svg l1">
@@ -38,6 +40,7 @@
                 <?php include 'svg/elecciones.php' ?>
               </div>
             </div>
+
             <img class="landing__image" src="img/e70.jpg" alt="">
           </div>
         </div>
@@ -154,7 +157,8 @@
 </div>
 <script src="js/vendor/jquery-3.3.1.min.js"></script>
 <script src="js/vendor/easing.js"></script>
-<!--<script src="js/main-min.js"></script>-->
-<script src="js/vanilla-min.js"></script>
+<script src="js/main-min.js"></script>
+<!--<script src="js/vanilla-min.js"></script>-->
+<!-- <script src="js/mouse-min.js"></script> -->
 </body>
 </html>

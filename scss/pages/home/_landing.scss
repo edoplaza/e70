@@ -173,6 +173,9 @@
 
     &__down{
       bottom: 20px;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
     }
     &__svg{
       left: 30vw;

@@ -19,6 +19,7 @@
   .home-section-free{
     width: calc( 100vw - (#{$border-size-desktop})*2 );
     margin-bottom: 44px;
+    height: auto;
   }
 }
 
@@ -26,9 +27,11 @@
 
   .home-section{
     margin-bottom: 30px;
+
   }
   .home-section-free{
     margin-bottom: 30px;
+    height: auto;
   }
 
 }
