@@ -1,8 +1,9 @@
 $(document).ready( function($){
 
 	// Selectors
-  const desktop = 1000;
+  const desktop = 1200;
 	const frame = $('.frame');
+  const wrapper = $('.wrapper');
 	const pull = $('.pull');
 	const logo = $('.logo');
 	const nav = $('.nav');
@@ -19,21 +20,16 @@ $(document).ready( function($){
   const down = $('.landing__down');
   const close = $('.what-we-do__close');
 
-
 	// Initialize Landing Section Measures
  	let landingHeight = landing.height() + landingImage.height() + 160;
  	landing.css('height', landingHeight);
 
 
-  if ($(window).width() < desktop ) {
-    landing.css('height', 'auto');
-  }
+  if ( window.innerWidth < desktop ) landing.css('height', 'auto');
 
-  $(window).resize(function(){
-    // if ($(window).width() >= desktop ) {
-    //   setTimeout( function(){location.reload(); }, 100 );
-    // }
-  })
+  //window.addEventListener('resize', () => window.innerWidth >= desktop && setTimeout( () => location.reload(), 100 ));
+
+  window.addEventListener('orientationchange', () => location.reload(), false);
 
 
 
@@ -88,23 +84,21 @@ $(document).ready( function($){
 
 	// Main Logo Functions
 	let removeLogoColors = () => {
-		 logo.removeClass('logo--green logo--red logo--black logo--blue logo--transparent');
+		 logo.removeClass('logo--0 logo--1 logo--2 logo--3 logo--4');
 	}
-	let addLogoColor = color => {
-
+	let addLogoColor = () => {
     setTimeout( function(){
       removeLogoColors();
-      logo.addClass('logo--'+ color);
+      logo.addClass('logo--' + Math.floor(Math.random() * 5) );
 
     }, 500 )
 
 	}
 
-
   // Content Scroll Listeners & Effects
 
-
-  const speed = 700;
+  let speed = 700;
+  let wait = 700;
   let p0 = s1.position().top;
   let p1 = landingImage.position().top;
   let p2 = landingImage.position().top + (landingImage.height() - $(window).outerHeight() );
@@ -112,57 +106,39 @@ $(document).ready( function($){
   let p4 = s3.position().top;
   let p5 = s4.position().top;
   let p6 = s5.position().top;
-
-
-
-  const flags = [p0, p1, p2, p3, p4, p5, p6];
-
+  let flags = [p0, p1, p2, p3, p4, p5, p6];
   let flag = 0;
   let counter = 0;
 
-  let wrapper = document.getElementById("wrapper");
-
-  if (wrapper.addEventListener) {
-    wrapper.addEventListener("mousewheel", MouseWheelHandler, false);
-    wrapper.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
-  }
-  else wrapper.attachEvent("onmousewheel", MouseWheelHandler);
-
-  function MouseWheelHandler(e) {
-    var e = window.event || e;
-    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-
+  wrapper.on('mousewheel', function(e) {
     if ($(window).width() > desktop ){
-      if( delta == -1) {
+      if( e.deltaY < 0) {
         if ( flag == 0 ) {
           flag = 1;
           counter += 1;
+          if (counter < 6) addLogoColor();
           if(counter > 6) counter = 6;
-          content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
-            setTimeout( () => flag = 0 , 500);
+          content.animate({ top: -(flags[counter]) }, speed, "easeOutSine", function(){
+            setTimeout( () => flag = 0, wait);
           });
         }
-      } else {
+      } else if (e.deltaY > 0) {
         if ( flag == 0 ) {
           flag = 1;
           counter -= 1;
+          if (counter > 0 ) addLogoColor();
           if (counter < 0) counter = 0;
-          content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
-            setTimeout( () => flag = 0 , 500);
+          content.animate({ top: -(flags[counter]) }, speed, "easeOutSine", function(){
+            setTimeout( () => flag = 0, wait);
           });
         }
       }
      }
 
-    counter >= 1 ? down.hide() : down.show();
-    counter >= 3 ? svgs.addClass('fadeOut') : svgs.removeClass('fadeOut');
-    counter == 0 && addLogoColor('green');
-    counter == 1 && addLogoColor('blue');
-    counter == 3 && addLogoColor('black');
-    counter == 4 && addLogoColor('green');
-    counter == 5 && addLogoColor('red');
-    counter == 6 && addLogoColor('black');
-  }
+    counter > 0 ? down.addClass('fadeOut') : down.removeClass('fadeOut');
+    counter > 2 ? svgs.addClass('fadeOut') : svgs.removeClass('fadeOut');
+
+  });
 
 
 	// Expand What We Do Sections
@@ -170,10 +146,13 @@ $(document).ready( function($){
 	wwd.on('click', document, function(){
 	  if ( $(this).hasClass('expanded' )){
 	    $(this).removeClass('expanded');
+      $(this).find('p').removeClass('fadeIn');
       close.removeClass('visible');
 	  } else {
 	    wwd.removeClass('expanded');
+      wwd.find('p').removeClass('fadeIn');
 	    $(this).addClass('expanded');
+      $(this).find('p').addClass('fadeIn');
       close.addClass('visible');
 	  }
 	});
@@ -181,8 +160,23 @@ $(document).ready( function($){
 
   close.on('click', document, ()=> {
     wwd.removeClass('expanded');
+    wwd.find('p').removeClass('fadeIn');
     close.removeClass('visible');
   });
+
+  // Campaigns Carousel
+  $('.fade').slick({
+    dots: true,
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    //fade: true,
+    cssEase: 'ease-out'
+  });
+
+
+  $('.slick-dots li').on('click', document, () => addLogoColor() );
+
 
 
 });

@@ -3,13 +3,12 @@
 // Cache Selectors
 const desktop = 1200;
 const frame = document.querySelector('.frame');
+const wrapper = document.querySelector('.wrapper');
 const pull = document.querySelector('.pull');
 const logo = document.querySelector('.logo');
 const nav = document.querySelector('.nav');
-const headerLogo = document.querySelector('.header__logo');
 const content = document.querySelector('.content');
 const landing = document.querySelector('.landing');
-const landingInner = document.querySelector('.landing__inner');
 const landingImage = document.querySelector('.landing__image');
 const svgs = document.querySelector('.svgs');
 const s1 = document.querySelector('.s1');
@@ -19,6 +18,10 @@ const s4 = document.querySelector('.s4');
 const s5 = document.querySelector('.s5');
 const down = document.querySelector('.landing__down');
 const close = document.querySelector('.what-we-do__close');
+const wwd = document.querySelector('.what-we-do__section');
+const cosa = document.querySelector('.cosa');
+
+let flag = 0;
 
 
 
@@ -29,18 +32,53 @@ let frameWidth = 64;
 
 
 // Initialize Landing Section
-landing.style.height = landing.innerHeight + landingImage.offsetHeight + 160 + 'px';
+landing.style.height = landing.innerHeight + landingImage.innerHeight + 160 + 'px';
 
 if ( windowWidth < desktop ) {
   landing.style.height = 'auto';
 }
 
+
+
+// fade out
+let fadeOut = el => {
+  el.style.opacity = 1;
+
+  (function fade() {
+    if ((el.style.opacity -= .1) < 0) {
+      el.style.display = "none";
+    } else {
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+// fade in
+let fadeIn = (el, display) => {
+  el.style.opacity = 0;
+  el.style.display = display || "block";
+
+  (function fade() {
+    let val = parseFloat(el.style.opacity);
+    if (!((val += .1) > 1)) {
+      el.style.opacity = val;
+      requestAnimationFrame(fade);
+    }
+  })();
+}
+
+
+
+
+ window.addEventListener('resize', () => window.innerWidth >= desktop && setTimeout( () => location.reload(), 100 ));
+ window.addEventListener('orientationchange', () => location.reload(), false);
+
 // Outer Frame functions
 let addColorFrame = () => {
- // frame.fadeTo( 400, 1);
+ fadeIn(frame);
 }
 let removeColorFrame = () => {
- // frame.fadeTo( 400, 0);
+ fadeOut(frame);
 }
 let pullColorWhite = () => {
   pull.classList.add('pull-white');
@@ -72,137 +110,151 @@ pull.onmousedown = event => {
 
 // Main Logo Functions
 let removeLogoColors = () => {
-	logo.classList.remove('logo--green');
-	logo.classList.remove('logo--red');
-	logo.classList.remove('logo--black');
-	logo.classList.remove('logo--blue');
+  for ( let i = 0; i < 4; i++ ) {
+    logo.classList.remove('logo--' + i);
+  }
 }
 
-let addLogoColor = color => {
-	removeLogoColors();
-	logo.classList.add('logo--'+ color);
+let addLogoColor = () => {
+  setTimeout( function(){
+    removeLogoColors();
+    logo.classList.add('logo--' + Math.floor(Math.random() * 4) );
+  }, 500 )
 }
-
-const speed = 1000;
-const d0 = s1.offsetTop;
-const d1 = s1.offsetTop - landingImage.offsetTop;
-const d2 = s1.offsetTop - landingImage.offsetTop - landingImage.innerHeight + window.innerHeight;
-const d3 = s1.offsetTop - s2.offsetTop;
-const d4 = s1.offsetTop - s3.offsetTop;
-const d5 = s1.offsetTop - s4.offsetTop;
-const d6 = s1.offsetTop - s5.offsetTop;
-const flags = [d0, d1, d2, d3, d4, d5, d6];
-
-let old = 0;
-let current = 0;
-let flag = 0;
-let counter = 0;
-let direction = 'up';
 
 let topPosition = e => {
-	let rect = e.getBoundingClientRect(),
-	scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-	let top = rect.top + scrollTop - frameWidth;
-	return top;
+  let rect = e.getBoundingClientRect(),
+  scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  let top = rect.top + scrollTop - frameWidth;
+  return top;
 }
 
-content.addEventListener('wheel', () => {
-	let s1Pos = topPosition(s1);
-  let landingImgPos = s1Pos + windowHeight - 5;
- 	let s2Pos = topPosition(s2);
- 	let s3Pos = topPosition(s3);
-  let s4Pos = topPosition(s4);
-  let s5Pos = topPosition(s5);
-
-	s1Pos < -10 ? down.style.display = 'none' : down.style.display = 'block';
-	s2Pos < windowHeight ? svgs.classList.add('fadeOut') : svgs.classList.remove('fadeOut');
-
-  //s2Pos <= window.innerHeight ? landingSvg.classList.add('fadeOut') : landingSvg.classList.remove('fadeOut');
 
 
-  // Change Logo colors
-  if(landingImgPos >= 0 ) {
-    addLogoColor('green');
-  }
 
-  if(landingImgPos < 0 ) {
-    addLogoColor('blue');
-  }
+const speed = 700;
+let p0 = topPosition(s1);
+let p1 = topPosition(landingImage);
+let p2 = topPosition(landingImage) + (landingImage.innerHeight - window.outerHeight);
+let p3 = topPosition(s2);
+let p4 = topPosition(s3);
+let p5 = topPosition(s4);
+let p6 = topPosition(s5);
 
-  if(s2Pos <= 0 ) {
-    addLogoColor('black');
-  }
+const flags = [p4, p5, p6];
 
-  if(s3Pos <= 0 ) {
-    addLogoColor('green');
-  }
 
-  if(s4Pos <= 0 ) {
-    addLogoColor('red');
-  }
+let counter = 0;
+let pos = 0;
+var b = 1;
 
-  if(s5Pos <= 75 ) {
-    addLogoColor('black');
-  }
-
-  //Magnetic Scroll
-
-  if ( windowWidth > desktop ){
-
-    //Detect if going up or down
-    old = current;
-    current = s1Pos;
-
-    if (old > current) {
-      direction = 'up';
-
-    }
-    else if (old < current ) {
-      direction = 'down';
-
-    }
-
-    if( direction == 'up') {
-      if ( flag == 0 ) {
-        flag = 1;
+function up(target){
+  flag = 1;
+  function move(){
+    pos -= 20;
+    content.style.top = pos + 'px';
+    if (counter < 3) {
+      if ( b < target/20){
+      b++
+      window.setTimeout(move, 5);
+    } else {
+        setTimeout(() => {
+        addLogoColor();
         counter += 1;
-        // content.animate({ scrollTop: -(flags[counter]) }, speed, "easeOutQuart", function(){
-        //   setTimeout( () => flag = 0 , 300);
-        // });
-
-        content.style.top = -200 + 'px';
-
-
-
-      }
+        flag = 0
+      }, 1000);
     }
-    else if ( direction == 'down') {
-      if ( flag == 0 ) {
-        flag = 1;
-        counter -= 1;
-        // content.animate({ scrollTop: -(flags[counter]) }, speed, "easeOutQuart", function(){
-        //   setTimeout( () => flag = 0 , 300);
-        // });
-      }
     }
-
-
   }
+  move();
+}
+
+function godown(target){
+  flag = 1;
+  function move(){
+    pos += 20;
+    content.style.top = pos + 'px';
+    if (counter < 3) {
+      if ( b < target/20){
+      b++
+      window.setTimeout(move, 5);
+    } else {
+        setTimeout(() => {
+        addLogoColor();
+        counter -= 1;
+        flag = 0
+      }, 1000);
+    }
+    }
+  }
+  move();
+}
 
 
 
-});
+if (wrapper.addEventListener) {
+  wrapper.addEventListener("mousewheel", MouseWheelHandler, false);
+  wrapper.addEventListener("DOMMouseScroll", MouseWheelHandler, false);
+}
+else wrapper.attachEvent("onmousewheel", MouseWheelHandler);
+
+function MouseWheelHandler(e) {
+  var e = window.event || e;
+  var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 
 
 
+  if (windowWidth > desktop ){
+
+    if( delta == -1 ) {
+      if ( flag == 0 ) {
+
+        //counter += 1;
 
 
+        // content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
+        //   setTimeout( () => flag = 0 , 700);
+        // });
+        up(flags[counter]);
+      }
+    } else if (delta == 1) {
+        if ( flag == 0 ) {
+    //     flag = 1;
+    //     counter -= 1;
+    //     if (counter > 0 ) addLogoColor();
+    //     if (counter < 0) counter = 0;
+    //     // content.animate({ top: -(flags[counter]) }, speed, "easeInOutCubic", function(){
+    //     //   setTimeout( () => flag = 0 , 700);
+    //     // });
+
+          godown(flags[counter]);
+        }
+    }
+   }
+
+  counter >= 1 ? down.style.display = 'none' : down.style.display = 'block';
+  counter >= 3 ? svgs.classList.add('fadeOut') : svgs.classList.remove('fadeOut');
+
+};
+
+  // Expand What We Do Sections
+
+  wwd.onmousedown = event => {
+    if ( wwd.classList.contains('expanded' )){
+      wwd.classList.remove('expanded');
+      close.classList.remove('visible');
+    } else {
+      wwd.classList.remove('expanded');
+      wwd.classList.add('expanded');
+      close.classList.add('visible');
+    }
+  };
 
 
-
-
-
-
+  close.onmousedown = event => {
+    wwd.removeClass('expanded');
+    close.removeClass('visible');
+  };
 
 
 

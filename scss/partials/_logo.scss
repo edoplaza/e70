@@ -7,24 +7,24 @@
   z-index: 80;
 }
 
-.logo--green{
-  @include colorLogo($green, $white);
-}
-
-.logo--red{
-  @include colorLogo($red, $white);
-}
-
-.logo--blue{
+.logo--0{
   @include colorLogo($blue, $white);
 }
 
-.logo--black{
-  @include colorLogo($white, $black);
+.logo--1{
+  @include colorLogo($green, $white);
 }
 
-.logo--transparent{
-  @include colorLogo($transparent, $transparent);
+.logo--2{
+  @include colorLogo($red, $white);
+}
+
+.logo--3{
+  @include colorLogo($yellow, $white);
+}
+
+.logo--4{
+  @include colorLogo($white, $black);
 }
 
 
@@ -33,6 +33,5 @@
     left: 1rem;
     top: -17px;
     width: 60px;
-
   }
 }

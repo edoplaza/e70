@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/vendor/slick.css"/>
+
 </head>
 <body>
   <?php include 'nav.php' ?>
@@ -19,6 +21,7 @@
     </span>
   </button>
   <div id="wrapper" class="wrapper">
+
     <div class="content">
 
       <div class="home-section landing s1">
@@ -26,6 +29,7 @@
           <div class="landing__content">
 
             <span class="landing__down">Iniciar<br><img src="img/arrow.svg" alt="Scroll Down"></span>
+
             <div class="svgs">
               <div class="landing__svg l1">
                 <?php include 'svg/la.php' ?>
@@ -84,30 +88,78 @@
       </div>
       <div class="home-section campaigns s4">
         <div class="campaigns__inner">
-          <div class="campaign" style="background: #ff0047">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+          <div class="fade">
+
+            <div>
+              <div class="campaign" style="background: #ff0047">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
+              </div>
+              <div class="campaign" style="background: #f8a12f">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
               </div>
             </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
-          </div>
-          <div class="campaign" style="background: #f8a12f">
-            <div class="campaign__info">
-              <div class="campaign__text">
-                <h2>Todos por la libertad</h2>
-                <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+
+            <div>
+              <div class="campaign" style="background: #009de1">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
+              </div>
+              <div class="campaign" style="background: #00a4ae">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
               </div>
             </div>
-            <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
+
+            <div>
+              <div class="campaign" style="background: #00d283">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
+              </div>
+              <div class="campaign" style="background: #009de1">
+                <div class="campaign__info">
+                  <div class="campaign__text">
+                    <h2>Todos por la libertad</h2>
+                    <p>Identidad visual yproducción audiovisual para Todos por la libertad y Rescate Venezuela</p>
+                  </div>
+                </div>
+                <a href="#" class="campaign__image" style="background-image: url('img/campaign1.jpg')"></a>
+              </div>
+            </div>
           </div>
+
 
         </div>
       </div>
       <div class="home-section stats s5">
         <div class="stats__inner">
-          <!--<img class="stats__logo" src="img/e70-blue.svg" alt="">-->
+
           <h2 class="stats__tagline">Amamos la creatividad y la política, <br>pero sobre todo ganar</h2>
           <div class="stats__counters">
             <div class="stats__container">
@@ -152,13 +204,17 @@
           <?php include 'footer.php' ?>
         </div>
       </div>
+
     </div>
+
   </div>
-</div>
-<script src="js/vendor/jquery-3.3.1.min.js"></script>
-<script src="js/vendor/easing.js"></script>
-<script src="js/main-min.js"></script>
-<!--<script src="js/vanilla-min.js"></script>-->
-<!-- <script src="js/mouse-min.js"></script> -->
+
+  <script src="js/vendor/jquery-3.3.1.min.js"></script>
+  <script src="js/vendor/easing.js"></script>
+  <script src="js/vendor/wheel.js"></script>
+  <script src="js/vendor/slick.min.js"></script>
+  <script src="js/main-min.js"></script>
+  <!-- <script src="js/vanilla-min.js"></script> -->
+  <!-- <script src="js/mouse-min.js"></script> -->
 </body>
 </html>

@@ -45,11 +45,12 @@
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    transition: background-size 0.2s ease-in;
-    opacity: 0.5;
+    transition: all 0.2s ease-in;
+    opacity: 1;
     &:hover{
+      opacity: 0.8;
       background-size: cover;
-      transition: background-size 0.2s ease-in;
+      transition: all 0.2s ease-in;
     }
   }
   &:nth-child(2n){
@@ -61,8 +62,54 @@
 
 }
 
+.slick-slider{
+  height: 100% !important;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    height: 100% !important;
+}
+
+.slick-dots{
+  display: flex;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  justify-content: flex-end;
+  li{
+    width: 30px;
+    button{
+      border: 1px solid white;
+      background: transparent;
+      border-radius: 50%;
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 15px;
+      height: 15px;
+      padding: 0;
+      cursor: pointer;
+      color: transparent;
+      outline: none;
+    }
+    &.slick-active, &:hover{
+      button{
+        background: white;
+        outline: none;
+      }
+    }
+
+  }
+}
+
+
+
 @include desktop{
   .campaigns{
+      @include center-inner-desktop;
+
     align-items: center;
     display: flex;
     justify-content: center;
@@ -101,26 +148,8 @@
         font-weight: 300;
       }
     }
-    &__image{
-      flex-grow: 1;
-      display: block;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
-      transition: background-size 0.2s ease-in;
-      opacity: 0.5;
-      &:hover{
-        background-size: cover;
-        transition: background-size 0.2s ease-in;
-      }
-    }
-    &:nth-child(2n){
-      flex-direction: row-reverse;
-      .campaign__text{
-        text-align: left;
-      }
-    }
+
+
 
   }
 

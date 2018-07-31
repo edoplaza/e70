@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   padding: 4rem 0;
+
   &__text{
     color: white;
     font-size: 6rem;
@@ -19,6 +20,7 @@
 
 @include desktop{
   .tagline{
+    @include center-inner-desktop;
     &__text{
       color: white;
       font-size: 4rem;

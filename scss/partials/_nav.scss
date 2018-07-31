@@ -98,3 +98,94 @@
   }
 }
 
+@include tablet{
+
+
+  .nav-top{
+    display: flex;
+    height: 70%;
+    &__inner{
+      align-items: center;
+      display: flex;
+      ul{
+        display: flex;
+        width: 100%;
+
+        li{
+          text-align: center;
+          margin: 0 0 5vh 0;
+          padding: 0;
+          position: relative;
+          width: 100%;
+          a{
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 2rem;
+
+            span{
+              display: none;
+              font-size: 1.5rem;
+              text-transform: none;
+            }
+          }
+          &:nth-last-child(-n+3){
+            margin: 0 0 5vh 0;
+
+          }
+          &:after{
+            display: none;
+            bottom: 0;
+            background: black;
+            content: '';
+            height: 2px;
+            left: 50%;
+            max-width: 100px;
+            width: 80%;
+            position: absolute;
+            transform: translate(-50%, 0);
+          }
+        }
+
+      }
+    }
+  }
+
+  .nav-footer{
+    background: $blue;
+    display: flex;
+    align-items: center;
+    height: 30%;
+    position: relative;
+    &__corner{
+      display: none;
+      left: 140px;
+      position: absolute;
+      top: 0;
+      width: 100px;
+    }
+    &__inner{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 2rem;
+    }
+    &__brand{
+      width: 150px;
+      margin-bottom: 3rem;
+    }
+    &__social{
+      display: flex;
+      justify-content: space-between;
+      width: 180px;
+      a{
+        i{
+          color: white;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+}
+
